@@ -27,11 +27,11 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-b from-background to-blue-50/10">
+    <section id="about" className="py-20 bg-gradient-to-b from-background to-blue-50/10 dark:to-slate-900/20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full text-blue-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
             The Foundation of Excellence
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
@@ -40,7 +40,7 @@ const AboutSection = () => {
               Gateway to Success
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             We don't just teach technology - we transform lives. Our mission is to bridge the gap between 
             ambition and achievement, turning aspiring minds into industry leaders.
           </p>
@@ -66,12 +66,12 @@ const AboutSection = () => {
             
             {/* Key Stats */}
             <div className="grid grid-cols-2 gap-6">
-              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
-                <div className="text-2xl font-bold text-blue-600 mb-2">5+ Years</div>
+              <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl border border-border/20 dark:border-border/30">
+                <div className="text-2xl font-bold text-blue-600 dark:text-blue-400 mb-2">5+ Years</div>
                 <div className="text-sm text-muted-foreground">Industry Experience</div>
               </div>
-              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl">
-                <div className="text-2xl font-bold text-purple-600 mb-2">Global</div>
+              <div className="text-center p-4 bg-gradient-to-br from-purple-50 to-pink-50 dark:from-purple-900/20 dark:to-pink-900/20 rounded-xl border border-border/20 dark:border-border/30">
+                <div className="text-2xl font-bold text-purple-600 dark:text-purple-400 mb-2">Global</div>
                 <div className="text-sm text-muted-foreground">Recognition</div>
               </div>
             </div>
@@ -80,7 +80,7 @@ const AboutSection = () => {
           {/* Visual Element */}
           <div className="reveal perspective-1000">
             <div className="relative transform-3d hover:rotate-y-12 transition-transform duration-500">
-              <div className="bg-gradient-to-br from-blue-100 via-cyan-100 to-purple-100 rounded-2xl p-8 shadow-2xl">
+              <div className="bg-gradient-to-br from-blue-100 via-cyan-100 to-purple-100 dark:from-blue-900/30 dark:via-cyan-900/30 dark:to-purple-900/30 rounded-2xl p-8 shadow-2xl border border-border/20 dark:border-border/30 backdrop-blur-sm">
                 <div className="space-y-6">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center">
@@ -126,7 +126,7 @@ const AboutSection = () => {
           {features.map((feature, index) => (
             <div 
               key={index}
-              className="reveal text-center p-6 bg-white/50 backdrop-blur-sm rounded-xl border border-white/20 hover:shadow-lg transition-all duration-300 group"
+              className="reveal text-center p-6 bg-card/80 dark:bg-card/60 backdrop-blur-sm rounded-xl border border-border/20 dark:border-border/30 hover:shadow-lg hover:bg-card/90 dark:hover:bg-card/70 transition-all duration-300 group"
               style={{animationDelay: `${index * 0.1}s`}}
             >
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 glow-azure">

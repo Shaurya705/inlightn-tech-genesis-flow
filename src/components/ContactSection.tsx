@@ -31,11 +31,11 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-blue-50/10 to-background">
+    <section id="contact" className="py-20 bg-gradient-to-b from-blue-50/10 dark:from-slate-900/20 to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full text-blue-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
             <MessageCircle size={16} />
             Get In Touch
           </div>
@@ -45,7 +45,7 @@ const ContactSection = () => {
               Transformation?
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Take the first step towards your tech career. Our team is here to guide you through 
             every aspect of your journey with Inlighn Tech.
           </p>
@@ -53,7 +53,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="reveal bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-lg">
+          <div className="reveal bg-card/80 dark:bg-card/60 backdrop-blur-sm border border-border/30 dark:border-border/40 rounded-2xl p-8 shadow-lg">
             <h3 className="text-2xl font-bold text-foreground mb-6">Send Us a Message</h3>
             
             <form onSubmit={handleSubmit} className="space-y-6">
@@ -69,7 +69,7 @@ const ContactSection = () => {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-background dark:bg-background/80 border border-border dark:border-border/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder:text-muted-foreground"
                     placeholder="Your full name"
                   />
                 </div>
@@ -84,7 +84,7 @@ const ContactSection = () => {
                     value={formData.email}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                    className="w-full px-4 py-3 bg-background dark:bg-background/80 border border-border dark:border-border/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground placeholder:text-muted-foreground"
                     placeholder="your.email@example.com"
                   />
                 </div>
@@ -99,7 +99,7 @@ const ContactSection = () => {
                   name="program"
                   value={formData.program}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300"
+                  className="w-full px-4 py-3 bg-background dark:bg-background/80 border border-border dark:border-border/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-foreground"
                 >
                   <option value="">Select a program...</option>
                   <option value="cybersecurity">Cybersecurity</option>
@@ -121,7 +121,7 @@ const ContactSection = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-background dark:bg-background/80 border border-border dark:border-border/60 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-foreground placeholder:text-muted-foreground"
                   placeholder="Tell us about your goals and how we can help you achieve them..."
                 />
               </div>
@@ -149,7 +149,7 @@ const ContactSection = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             {/* Contact Details */}
-            <div className="reveal bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-lg">
+            <div className="reveal bg-card/80 dark:bg-card/60 backdrop-blur-sm border border-border/30 dark:border-border/40 rounded-2xl p-8 shadow-lg">
               <h3 className="text-2xl font-bold text-foreground mb-6">Get In Touch</h3>
               
               <div className="space-y-6">
@@ -200,7 +200,7 @@ const ContactSection = () => {
             </div>
 
             {/* FAQ Quick Links */}
-            <div className="reveal bg-gradient-to-br from-blue-50 to-cyan-50 rounded-2xl p-8">
+            <div className="reveal bg-gradient-to-br from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 border border-border/20 dark:border-border/30">
               <h3 className="text-xl font-bold text-foreground mb-4">Quick Answers</h3>
               <div className="space-y-3">
                 <div className="flex items-center gap-2 text-sm">
