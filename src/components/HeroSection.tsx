@@ -21,9 +21,9 @@ const HeroSection = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Neural network animation
+    // Enhanced neural network animation
     const nodes: Array<{x: number, y: number, vx: number, vy: number, connections: number[]}> = [];
-    const nodeCount = 50;
+    const nodeCount = window.innerWidth < 768 ? 30 : 50; // Fewer nodes on mobile
     
     // Initialize nodes
     for (let i = 0; i < nodeCount; i++) {
@@ -58,8 +58,9 @@ const HeroSection = () => {
               Math.pow(node.x - otherNode.x, 2) + Math.pow(node.y - otherNode.y, 2)
             );
             
-            if (distance < 150) {
-              const opacity = 1 - distance / 150;
+            const maxDistance = window.innerWidth < 768 ? 100 : 150;
+            if (distance < maxDistance) {
+              const opacity = 1 - distance / maxDistance;
               ctx.strokeStyle = `rgba(59, 130, 246, ${opacity * 0.3})`;
               ctx.lineWidth = 1;
               ctx.beginPath();
@@ -88,31 +89,31 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-blue-50/20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-background via-background to-blue-50/20 dark:to-blue-950/20">
       {/* Animated Background */}
       <canvas
         ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-60"
+        className="absolute inset-0 w-full h-full opacity-60 dark:opacity-80"
       />
       
       {/* Floating Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float"></div>
-        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-full blur-3xl animate-neural"></div>
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 sm:w-48 sm:h-48 lg:w-64 lg:h-64 bg-gradient-to-r from-blue-400/20 to-cyan-400/20 rounded-full blur-3xl animate-float"></div>
+        <div className="absolute top-3/4 right-1/4 w-48 h-48 sm:w-64 sm:h-64 lg:w-96 lg:h-96 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float" style={{animationDelay: '2s'}}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-40 h-40 sm:w-60 sm:h-60 lg:w-80 lg:h-80 bg-gradient-to-r from-cyan-400/10 to-blue-500/10 rounded-full blur-3xl animate-neural"></div>
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto container-responsive text-center">
         <div className="reveal active">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full text-blue-700 text-sm font-medium mb-8 glow-azure">
-            <Sparkles size={16} className="animate-pulse" />
+          <div className="inline-flex items-center gap-2 px-3 py-2 sm:px-4 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 rounded-full text-blue-700 dark:text-blue-300 text-xs sm:text-sm font-medium mb-6 sm:mb-8 glow-azure">
+            <Sparkles size={14} className="animate-pulse" />
             The Genesis of Innovation
           </div>
           
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-foreground mb-4 sm:mb-6 leading-tight">
             Transform Your
             <span className="block bg-gradient-to-r from-blue-600 via-cyan-500 to-purple-600 bg-clip-text text-transparent animate-pulse-glow">
               Tech Potential
@@ -121,54 +122,54 @@ const HeroSection = () => {
           </h1>
           
           {/* Subtitle */}
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-muted-foreground mb-6 sm:mb-8 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0">
             Embark on a transformative journey where curiosity becomes capability, 
             and dreams evolve into digital reality through our cutting-edge programs.
           </p>
           
           {/* Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
-            <button className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 glow-azure">
-              <span className="flex items-center gap-2">
-                <Zap size={20} className="group-hover:animate-pulse" />
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center mb-8 sm:mb-12 px-4 sm:px-0">
+            <button className="group relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-cyan-500 text-white rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300 glow-azure">
+              <span className="flex items-center justify-center gap-2">
+                <Zap size={18} className="group-hover:animate-pulse" />
                 Begin Your Journey
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-blue-700 to-cyan-600 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
             </button>
             
-            <button className="group px-8 py-4 border-2 border-foreground/20 text-foreground rounded-xl font-semibold text-lg hover:border-blue-500 hover:text-blue-500 transform hover:scale-105 transition-all duration-300">
-              <span className="flex items-center gap-2">
-                <Code2 size={20} />
+            <button className="group w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-foreground/20 text-foreground rounded-xl font-semibold text-base sm:text-lg hover:border-blue-500 hover:text-blue-500 transform hover:scale-105 transition-all duration-300">
+              <span className="flex items-center justify-center gap-2">
+                <Code2 size={18} />
                 Explore Programs
               </span>
             </button>
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-2xl mx-auto">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 max-w-2xl mx-auto px-4 sm:px-0">
             <div className="text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
-              <div className="text-sm text-muted-foreground">Graduates</div>
+              <div className="text-2xl sm:text-3xl font-bold text-blue-600 mb-1 sm:mb-2">1000+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Graduates</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-cyan-500 mb-2">95%</div>
-              <div className="text-sm text-muted-foreground">Success Rate</div>
+              <div className="text-2xl sm:text-3xl font-bold text-cyan-500 mb-1 sm:mb-2">95%</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Success Rate</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-purple-500 mb-2">50+</div>
-              <div className="text-sm text-muted-foreground">Industry Partners</div>
+              <div className="text-2xl sm:text-3xl font-bold text-purple-500 mb-1 sm:mb-2">50+</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Industry Partners</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold text-pink-500 mb-2">24/7</div>
-              <div className="text-sm text-muted-foreground">Support</div>
+              <div className="text-2xl sm:text-3xl font-bold text-pink-500 mb-1 sm:mb-2">24/7</div>
+              <div className="text-xs sm:text-sm text-muted-foreground">Support</div>
             </div>
           </div>
         </div>
       </div>
       
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown size={24} className="text-muted-foreground" />
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <ArrowDown size={20} className="text-muted-foreground" />
       </div>
     </section>
   );
