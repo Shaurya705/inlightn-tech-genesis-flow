@@ -33,11 +33,11 @@ const VerifySection = () => {
   };
 
   return (
-    <section id="verify" className="py-20 bg-gradient-to-b from-background to-blue-50/10">
+    <section id="verify" className="py-20 bg-gradient-to-b from-background to-blue-50/10 dark:to-slate-900/20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12 reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full text-blue-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
             <FileCheck size={16} />
             Certificate Verification
           </div>
@@ -53,7 +53,7 @@ const VerifySection = () => {
         </div>
 
         {/* Verification Interface */}
-        <div className="reveal bg-white/70 backdrop-blur-sm border border-white/30 rounded-2xl p-8 shadow-lg">
+        <div className="reveal bg-card/80 backdrop-blur-sm border border-border/50 dark:bg-card/40 dark:border-border/30 rounded-2xl p-8 shadow-lg">
           <div className="text-center mb-8">
             <div className="w-20 h-20 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full flex items-center justify-center mx-auto mb-4 glow-azure">
               <Award className="text-white" size={32} />
@@ -70,7 +70,7 @@ const VerifySection = () => {
                 value={certificateId}
                 onChange={(e) => setCertificateId(e.target.value)}
                 placeholder="Enter Certificate ID (e.g., INLIGHN-2024-001)"
-                className="w-full px-4 py-3 pr-12 bg-white border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full px-4 py-3 pr-12 bg-background border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-foreground placeholder:text-muted-foreground"
               />
               <button
                 onClick={handleVerify}
@@ -88,48 +88,48 @@ const VerifySection = () => {
 
           {/* Verification Results */}
           {verificationResult.status === 'valid' && (
-            <div className="bg-green-50 border border-green-200 rounded-xl p-6 animate-fade-in">
+            <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/50 rounded-xl p-6 animate-fade-in">
               <div className="flex items-center gap-3 mb-4">
                 <CheckCircle className="text-green-500" size={24} />
-                <h4 className="text-lg font-semibold text-green-800">Certificate Verified!</h4>
+                <h4 className="text-lg font-semibold text-green-800 dark:text-green-300">Certificate Verified!</h4>
               </div>
               <div className="grid md:grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="text-green-600 font-medium">Student Name:</span>
-                  <div className="text-green-800">{verificationResult.data?.studentName}</div>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Student Name:</span>
+                  <div className="text-green-800 dark:text-green-300">{verificationResult.data?.studentName}</div>
                 </div>
                 <div>
-                  <span className="text-green-600 font-medium">Program:</span>
-                  <div className="text-green-800">{verificationResult.data?.program}</div>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Program:</span>
+                  <div className="text-green-800 dark:text-green-300">{verificationResult.data?.program}</div>
                 </div>
                 <div>
-                  <span className="text-green-600 font-medium">Completion Date:</span>
-                  <div className="text-green-800">{verificationResult.data?.completionDate}</div>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Completion Date:</span>
+                  <div className="text-green-800 dark:text-green-300">{verificationResult.data?.completionDate}</div>
                 </div>
                 <div>
-                  <span className="text-green-600 font-medium">Grade:</span>
-                  <div className="text-green-800">{verificationResult.data?.grade}</div>
+                  <span className="text-green-600 dark:text-green-400 font-medium">Grade:</span>
+                  <div className="text-green-800 dark:text-green-300">{verificationResult.data?.grade}</div>
                 </div>
               </div>
             </div>
           )}
 
           {verificationResult.status === 'invalid' && (
-            <div className="bg-red-50 border border-red-200 rounded-xl p-6 animate-fade-in">
+            <div className="bg-red-50 dark:bg-red-900/20 border border-red-200 dark:border-red-800/50 rounded-xl p-6 animate-fade-in">
               <div className="flex items-center gap-3 mb-2">
                 <AlertCircle className="text-red-500" size={24} />
-                <h4 className="text-lg font-semibold text-red-800">Certificate Not Found</h4>
+                <h4 className="text-lg font-semibold text-red-800 dark:text-red-300">Certificate Not Found</h4>
               </div>
-              <p className="text-red-600">
+              <p className="text-red-600 dark:text-red-400">
                 The certificate ID you entered could not be verified. Please check the ID and try again.
               </p>
             </div>
           )}
 
           {/* Sample Certificate IDs */}
-          <div className="mt-8 p-4 bg-blue-50 rounded-xl">
-            <h5 className="font-semibold text-blue-800 mb-2">Sample Certificate ID for Testing:</h5>
-            <code className="text-blue-600 text-sm bg-white px-2 py-1 rounded">INLIGHN-2024-001</code>
+          <div className="mt-8 p-4 bg-blue-50 dark:bg-blue-900/20 border border-blue-200/50 dark:border-blue-800/30 rounded-xl">
+            <h5 className="font-semibold text-blue-800 dark:text-blue-300 mb-2">Sample Certificate ID for Testing:</h5>
+            <code className="text-blue-600 dark:text-blue-400 text-sm bg-background px-2 py-1 rounded border border-border/50">INLIGHN-2024-001</code>
           </div>
         </div>
 

@@ -51,11 +51,11 @@ const ProgramsSection = () => {
   ];
 
   return (
-    <section id="programs" className="py-20 bg-gradient-to-b from-blue-50/10 to-background">
+    <section id="programs" className="py-20 bg-gradient-to-b from-blue-50/10 to-background dark:from-slate-900/20 dark:to-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 reveal">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 rounded-full text-blue-700 text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/30 dark:to-cyan-900/30 rounded-full text-blue-700 dark:text-blue-300 text-sm font-medium mb-6">
             <Zap size={16} />
             Program Portals
           </div>
@@ -76,7 +76,7 @@ const ProgramsSection = () => {
           {programs.map((program, index) => (
             <div
               key={program.id}
-              className="portal-card group bg-white/70 backdrop-blur-sm border border-white/30 p-8 h-full"
+              className="portal-card group bg-card/80 backdrop-blur-sm border border-border/50 dark:bg-card/40 dark:border-border/30 p-8 h-full hover:bg-card/90 dark:hover:bg-card/60 transition-all duration-300"
               style={{animationDelay: `${index * 0.2}s`}}
             >
               {/* Header */}
@@ -86,13 +86,13 @@ const ProgramsSection = () => {
                     <program.icon className="text-white" size={28} />
                   </div>
                   <div>
-                    <h3 className="text-2xl font-bold text-foreground group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-2xl font-bold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300">
                       {program.title}
                     </h3>
-                    <p className="text-blue-600 font-medium">{program.subtitle}</p>
+                    <p className="text-blue-600 dark:text-blue-400 font-medium">{program.subtitle}</p>
                   </div>
                 </div>
-                <ArrowRight className="text-muted-foreground group-hover:text-blue-600 group-hover:translate-x-2 transition-all duration-300" size={24} />
+                <ArrowRight className="text-muted-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 group-hover:translate-x-2 transition-all duration-300" size={24} />
               </div>
 
               {/* Description */}
@@ -111,7 +111,7 @@ const ProgramsSection = () => {
               </div>
 
               {/* Program Info */}
-              <div className="flex justify-between items-center pt-4 border-t border-gray-200">
+              <div className="flex justify-between items-center pt-4 border-t border-border/50">
                 <div>
                   <div className="text-sm text-muted-foreground">Duration</div>
                   <div className="font-semibold text-foreground">{program.duration}</div>
@@ -131,7 +131,7 @@ const ProgramsSection = () => {
         </div>
 
         {/* Call to Action */}
-        <div className="text-center reveal bg-gradient-to-r from-blue-50 to-cyan-50 rounded-2xl p-8">
+        <div className="text-center reveal bg-gradient-to-r from-blue-50 to-cyan-50 dark:from-blue-900/20 dark:to-cyan-900/20 rounded-2xl p-8 border border-border/30">
           <h3 className="text-2xl font-bold text-foreground mb-4">
             Not Sure Which Path to Choose?
           </h3>
