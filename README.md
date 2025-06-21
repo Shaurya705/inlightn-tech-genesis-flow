@@ -1,73 +1,166 @@
-# Welcome to your Lovable project
+# Inlightn Tech Genesis Flow
 
-## Project info
+![Inlightn Tech Logo](public/favicon.ico)
 
-**URL**: https://lovable.dev/projects/48c9a3f6-037c-4445-b217-c50bd33cb909
+## Project Overview
 
-## How can I edit this code?
+Inlightn Tech Genesis Flow is a modern, responsive web application built for an educational technology platform that offers specialized training programs in cutting-edge tech fields. The application features a clean, professional UI with interactive elements, smooth animations, and a comprehensive set of sections showcasing the company's offerings.
 
-There are several ways of editing your application.
+**Live Demo**: [Inlightn Tech Genesis Flow](https://lovable.dev/projects/48c9a3f6-037c-4445-b217-c50bd33cb909)
 
-**Use Lovable**
+## Features
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/48c9a3f6-037c-4445-b217-c50bd33cb909) and start prompting.
+### 🚀 Modern UI/UX
+- Responsive design that works on all devices
+- Interactive animations and particle system
+- Dark/Light theme toggle with persistent user preference
+- Smooth scrolling navigation
 
-Changes made via Lovable will be committed automatically to this repo.
+### 📚 Featured Sections
+- **Hero Section**: Dynamic introduction with animated particle background
+- **About Section**: Company values and unique selling points
+- **Programs Section**: Detailed showcase of educational programs
+  - Cybersecurity
+  - Full Stack Development
+  - Data Science
+  - And more...
+- **Verification Section**: Tools to verify certificates and credentials
+- **Contact Section**: Easy to use contact form
 
-**Use your preferred IDE**
+### 🛠️ Technical Features
+- Component-based architecture
+- Theme management system
+- Toast notifications
+- Form validation
+- Routing system
+- React Query for data fetching
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Tech Stack
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- **React**: UI Library
+- **TypeScript**: Static typing
+- **Vite**: Fast build tooling
+- **React Router**: Routing
+- **Tailwind CSS**: Utility-first styling
+- **shadcn/ui**: High-quality UI components
+- **Radix UI**: Accessible component primitives
+- **Lucide Icons**: Beautiful SVG icons
+- **React Query**: Data fetching library
+- **React Hook Form**: Form management
 
-Follow these steps:
+## Getting Started
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### Prerequisites
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+- Node.js (v16.0 or later)
+- npm or yarn package manager
 
-# Step 3: Install the necessary dependencies.
-npm i
+### Installation
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+# Clone the repository
+git clone <REPOSITORY_URL>
+
+# Navigate to project directory
+cd inlightn-tech-genesis-flow
+
+# Install dependencies
+npm install
+# or
+yarn install
+
+# Start the development server
 npm run dev
+# or
+yarn dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173`.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Project Structure
 
-**Use GitHub Codespaces**
+```
+inlightn-tech-genesis-flow/
+├── public/                # Static assets
+├── src/
+│   ├── components/        # Reusable UI components
+│   │   ├── animations/    # Animation components
+│   │   └── ui/           # UI components from shadcn
+│   ├── hooks/            # Custom React hooks
+│   ├── lib/              # Utility functions
+│   ├── pages/            # Page components
+│   ├── App.tsx           # Root component
+│   └── main.tsx          # Entry point
+├── .eslintrc.json        # ESLint configuration
+├── index.html            # HTML template
+├── package.json          # Project dependencies and scripts
+├── postcss.config.js     # PostCSS configuration
+├── tailwind.config.ts    # Tailwind CSS configuration
+├── tsconfig.json         # TypeScript configuration
+└── vite.config.ts        # Vite configuration
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Available Scripts
 
-## What technologies are used for this project?
+- `npm run dev`: Start development server
+- `npm run build`: Build for production
+- `npm run build:dev`: Build for development
+- `npm run preview`: Preview production build
+- `npm run lint`: Run ESLint
 
-This project is built with:
+## Customization
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Theming
+The application uses Tailwind CSS for styling and supports both light and dark modes. Theme preferences are stored in localStorage.
 
-## How can I deploy this project?
+To customize the theme:
+1. Edit the `tailwind.config.ts` file to modify colors, fonts, etc.
+2. Update the `ThemeProvider.tsx` component for theme switching logic
 
-Simply open [Lovable](https://lovable.dev/projects/48c9a3f6-037c-4445-b217-c50bd33cb909) and click on Share -> Publish.
+### Adding New Pages
+1. Create a new component in the `pages` directory
+2. Add a new route in `App.tsx`
+```tsx
+<Route path="/your-new-page" element={<YourNewPage />} />
+```
 
-## Can I connect a custom domain to my Lovable project?
+## Deployment
 
-Yes, you can!
+### Using Lovable
+1. Visit [Lovable Project](https://lovable.dev/projects/48c9a3f6-037c-4445-b217-c50bd33cb909)
+2. Click on Share -> Publish
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+### Manual Deployment
+The project can be deployed to any platform that supports static site hosting:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+1. Run `npm run build` to generate production files
+2. Upload the contents of the `dist` directory to your hosting provider
+
+### Custom Domain Setup
+To connect a custom domain to your Lovable project:
+
+1. Navigate to Project > Settings > Domains
+2. Click Connect Domain
+3. Follow the instructions provided
+
+For more details, see: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add some amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Acknowledgments
+
+- [Shadcn UI](https://ui.shadcn.com/) for the beautiful UI components
+- [Lucide Icons](https://lucide.dev/) for the icon set
+- [Lovable](https://lovable.dev/) for the development and deployment platform
